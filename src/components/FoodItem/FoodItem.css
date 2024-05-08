@@ -51,7 +51,7 @@
 .food-item-img-container .add {
     width: 35px;
     position: absolute;
-    bottom: -130px;
+    bottom: 15px;
     right: 15px;
     cursor: pointer;
     border-radius: 50%;
@@ -59,7 +59,7 @@
 
 .food-item-counter {
     position: absolute;
-    bottom: -130px;
+    bottom: 15px;
     right: 15px;
     display: flex;
     align-items: center;
