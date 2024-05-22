@@ -1,10 +1,36 @@
 import React from 'react'
 import './Sidebar.css'
+import { assets } from '../../assets/assets'
 
 const Sidebar = () => {
   return (
-    <div>
-      
+    <div className='sidebar'>
+      <div className="sidebar-options">
+        <div className="sidebar-option">
+            <img 
+                src={assets.add_icon} 
+                alt="" 
+                loading='lazy'
+            />
+            <p>Add Items</p>
+        </div>
+        <div className="sidebar-option">
+            <img 
+                src={assets.order_icon} 
+                alt="" 
+                loading='lazy'
+            />
+            <p>List Items</p>
+        </div>
+        <div className="sidebar-option">
+            <img 
+                src={assets.order_icon} 
+                alt="" 
+                loading='lazy'
+            />
+            <p>Orders</p>
+        </div>
+      </div>
     </div>
   )
 }
