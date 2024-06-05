@@ -96,4 +96,9 @@ const listOrders = async(req,res) => {
     }
 }
 
-export {placeOrder, verifyOrder, userOrders, listOrders}
+// api for upDating order status
+const updateStatus = async (req,res) = {
+
+}
+
+export {placeOrder, verifyOrder, userOrders, listOrders, updateStatus}
