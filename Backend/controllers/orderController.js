@@ -85,4 +85,9 @@ const userOrders = async (req,res) => {
     }
 }
 
-export {placeOrder, verifyOrder, userOrders}
+// Listing orders for admin panel
+const listOrders = async(req,res) => {
+
+}
+
+export {placeOrder, verifyOrder, userOrders, listOrders}
