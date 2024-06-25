@@ -2,9 +2,15 @@ import React, { useContext, useState } from 'react'
 import './LoginPopup.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
+import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios'
 
 const LoginPopup = ({setShowLogin}) => {
+
+const onChange = () => {
+
+}
+
 
   const {url, setToken} = useContext(StoreContext)
 
@@ -43,10 +49,11 @@ const LoginPopup = ({setShowLogin}) => {
       }
 
     }
+   
 
   return (
     <div className='login-popup'>
-      <form onSubmit={onLogin} className="login-popup-container">
+      <form onSubmit={onLogin} className="login-popup-container" >
         <div className="login-popup-title">
             <h2>{currState}</h2>
             {/* <img Click={()=>setShowLogin(false)} src={assets.cross_icon} alt="" /> */}
@@ -57,8 +64,15 @@ const LoginPopup = ({setShowLogin}) => {
             <input name='email' onChange={onChangeHandler} value={data.email} placeholder='Your email' type="email" required/>
             <input name='password' onChange={onChangeHandler} value={data.password} placeholder='Password' type="password" required/>
         </div>
-        <button type='submit'>{currState==="Sign Up"?"Create account":"Login"}</button>
+
+          <ReCAPTCHA
+            sitekey="6Ld_6AAqAAAAAPVL5-kgnv4e_FRUQawlPRydaRb-"
+            onChange={onChange}
+          />
+
+        <button  value="Submit"  type='submit'>{currState==="Sign Up"?"Create account":"Login"}</button>
         <div className='login-popup-condition'>
+
             <input type="checkbox" required/>
             <p>By continuning, i agree to the terms of use & privacy policy.</p>
         </div>
@@ -66,10 +80,9 @@ const LoginPopup = ({setShowLogin}) => {
         ? <p>Create a new account? <span onClick={()=>setCurrState("Sign Up")}>Click here</span></p>
         : <p>Already have an account <span onClick={()=>setCurrState("Login")}>Login here</span></p>
         }
-       
-        
 
       </form>
+      
     </div>
   )
 }
